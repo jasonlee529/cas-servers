@@ -47,6 +47,7 @@
   p:idleConnectionTestPeriod="${database.pool.idleConnectionTestPeriod}"
   p:preferredTestQuery="${database.pool.connectionHealthQuery}" />
 
-
+<alias name="queryDatabaseAuthenticationHandler" alias="primaryAuthenticationHandler" />
+<alias name="dataSource" alias="queryDatabaseDataSource" />
 
   </beans>
