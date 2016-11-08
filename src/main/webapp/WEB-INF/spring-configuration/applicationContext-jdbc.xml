@@ -26,20 +26,27 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-	<description>
-		This file lets CAS know where you've stored the cas.properties file which details some of the configuration options
-		that are specific to your environment.  You can specify the location of the file here.  You may wish to place the file outside
-		of the Servlet context if you have options that are specific to a tier (i.e. test vs. production) so that the WAR file
-		can be moved between tiers without modification.
-	</description>
-
-    <util:properties id="casProperties" location="file:/etc/cas/cas.properties" />
-    <context:property-placeholder
-      ignore-unresolvable="true" location="classpath*:/spring-configuration/jdbc.properties" />
-
-    <context:property-placeholder properties-ref="casProperties" />
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
 
-</beans>
+<bean id="dataSource"
+  class="com.mchange.v2.c3p0.ComboPooledDataSource"
+  p:driverClass="${database.driverClass}"
+  p:jdbcUrl="${database.url}"
+  p:user="${database.user}"
+  p:password="${database.password}"
+  p:initialPoolSize="${database.pool.minSize}"
+  p:minPoolSize="${database.pool.minSize}"
+  p:maxPoolSize="${database.pool.maxSize}"
+  p:maxIdleTimeExcessConnections="${database.pool.maxIdleTime}"
+  p:checkoutTimeout="${database.pool.maxWait}"
+  p:acquireIncrement="${database.pool.acquireIncrement}"
+  p:acquireRetryAttempts="${database.pool.acquireRetryAttempts}"
+  p:acquireRetryDelay="${database.pool.acquireRetryDelay}"
+  p:idleConnectionTestPeriod="${database.pool.idleConnectionTestPeriod}"
+  p:preferredTestQuery="${database.pool.connectionHealthQuery}" />
+
+
+
+  </beans>
