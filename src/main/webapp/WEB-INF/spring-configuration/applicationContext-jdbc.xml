@@ -30,7 +30,8 @@
 
 
 
-<bean id="dataSource"
+    <!--
+    <bean id="dataSource"
   class="com.mchange.v2.c3p0.ComboPooledDataSource"
   p:driverClass="${database.driverClass}"
   p:jdbcUrl="${database.url}"
@@ -48,6 +49,24 @@
   p:preferredTestQuery="${database.pool.connectionHealthQuery}" />
 
 <alias name="queryDatabaseAuthenticationHandler" alias="primaryAuthenticationHandler" />
-<alias name="dataSource" alias="queryDatabaseDataSource" />
-
+-->
+<bean id="dataSource" class="com.jolbox.bonecp.NoneCPDataSource" destroy-method="close">
+<property name="driverClass" value="com.mysql.jdbc.Driver" />
+           <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/cas?useUnicode=true&characterEncoding=UTF-8" />
+           <property name="username" value="root"/>
+           <property name="password" value="sa"/>
+           <property name="idleConnectionTestPeriod" value="60"/>
+           <property name="idleMaxAge" value="240"/>
+           <property name="maxConnectionsPerPartition" value="30"/>
+           <property name="minConnectionsPerPartition" value="10"/>
+           <property name="partitionCount" value="3"/>
+           <property name="acquireIncrement" value="5"/>
+           <property name="statementsCacheSize" value="100"/>
+           <property name="releaseHelperThreads" value="3"/>
+</bean>
+            <bean class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
+             <property name="dataSource" ref="dataSource" />
+             <property name="sql"
+                    value="select password from my_user where login_name = ?" />
+            </bean>
   </beans>
