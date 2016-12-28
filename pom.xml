@@ -109,5 +109,9 @@
             <id>shibboleth-releases</id>
             <url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
         </repository>
+        <repository>
+            <id>nexus</id>
+            <url>http://192.168.1.200:8082/nexus/content/groups/public/</url>
+      </repository>
     </repositories>
 </project>
