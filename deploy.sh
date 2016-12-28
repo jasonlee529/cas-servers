@@ -3,7 +3,7 @@
 echo "package cas war"
 mvnw clean package -X
 
-tomcat=/home/jason/workbench/tools/servers/apache-tomcat-7.0.68
+tomcat=/home/jason/workbench/tools/servers/cas-tomcat-7.0.68
 echo "shutdown tomcat"
 sh -x $tomcat/bin/shutdown.sh
 
