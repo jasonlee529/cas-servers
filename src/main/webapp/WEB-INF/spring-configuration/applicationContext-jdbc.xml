@@ -28,28 +28,6 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-
-
-    <!--
-    <bean id="dataSource"
-  class="com.mchange.v2.c3p0.ComboPooledDataSource"
-  p:driverClass="${database.driverClass}"
-  p:jdbcUrl="${database.url}"
-  p:user="${database.user}"
-  p:password="${database.password}"
-  p:initialPoolSize="${database.pool.minSize}"
-  p:minPoolSize="${database.pool.minSize}"
-  p:maxPoolSize="${database.pool.maxSize}"
-  p:maxIdleTimeExcessConnections="${database.pool.maxIdleTime}"
-  p:checkoutTimeout="${database.pool.maxWait}"
-  p:acquireIncrement="${database.pool.acquireIncrement}"
-  p:acquireRetryAttempts="${database.pool.acquireRetryAttempts}"
-  p:acquireRetryDelay="${database.pool.acquireRetryDelay}"
-  p:idleConnectionTestPeriod="${database.pool.idleConnectionTestPeriod}"
-  p:preferredTestQuery="${database.pool.connectionHealthQuery}" />
-
-<alias name="queryDatabaseAuthenticationHandler" alias="primaryAuthenticationHandler" />
--->
 <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
     <!-- Connection Info -->
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
