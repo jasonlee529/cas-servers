@@ -34,12 +34,8 @@
 		can be moved between tiers without modification.
 	</description>
 
-    <util:properties id="casProperties" location="file:/etc/cas/cas.properties" />
-
+    <util:properties id="casProperties" location="/WEB-INF/config/cas.properties" />
+	<context:property-placeholder properties-ref="casProperties"/>
     <context:property-placeholder ignore-unresolvable="true" location="/WEB-INF/config/jdbc.properties"/>
-
-    <context:property-placeholder   ignore-unresolvable="true" properties-ref="casProperties" />
-
-
 
 </beans>
