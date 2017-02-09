@@ -226,6 +226,8 @@ export MAVEN_CMD_LINE_ARGS
 
 WRAPPER_LAUNCHER="org.apache.maven.wrapper.MavenWrapperMain"
 
+
+echo $M2_HOME
 exec "$JAVACMD" \
      $MAVEN_OPTS \
      "-Dmaven.home=${M2_HOME}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
