@@ -29,7 +29,6 @@
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.NamedStubPersonAttributeDao"
           p:backingMap-ref="attrRepoBackingMap" />
 
-    <alias name="acceptUsersAuthenticationHandler" alias="primaryAuthenticationHandler" />
     <alias name="personDirectoryPrincipalResolver" alias="primaryPrincipalResolver" />
 
     <util:map id="attrRepoBackingMap">
@@ -74,4 +73,5 @@
     <alias name="defaultAuthenticationTransactionManager" alias="authenticationTransactionManager" />
     <alias name="defaultPrincipalElectionStrategy" alias="principalElectionStrategy" />
     <alias name="tgcCipherExecutor" alias="defaultCookieCipherExecutor" />
+
 </beans>
