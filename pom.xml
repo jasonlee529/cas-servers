@@ -122,6 +122,9 @@
             <id>shibboleth-releases</id>
             <url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
         </repository>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 88cec264e6e5a2003c9b781c276d850570103f03
     </repositories>
 </project>

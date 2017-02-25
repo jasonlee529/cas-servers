@@ -33,6 +33,7 @@
 		of the Servlet context if you have options that are specific to a tier (i.e. test vs. production) so that the WAR file
 		can be moved between tiers without modification.
 	</description>
+<<<<<<< HEAD
 
     <util:properties id="casProperties" location="file:/etc/cas/cas.properties" />
 
@@ -41,5 +42,11 @@
     <context:property-placeholder   ignore-unresolvable="true" properties-ref="casProperties" />
 
 
+=======
+
+    <util:properties id="casProperties" location="/WEB-INF/config/cas.properties" />
+	<context:property-placeholder properties-ref="casProperties"/>
+    <context:property-placeholder ignore-unresolvable="true" location="/WEB-INF/config/jdbc.properties"/>
+>>>>>>> 88cec264e6e5a2003c9b781c276d850570103f03
 
 </beans>
