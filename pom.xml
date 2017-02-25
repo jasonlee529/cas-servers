@@ -48,10 +48,11 @@
                 <version>${maven-jetty-plugin.version}</version>
                 <configuration>
                     <httpConnector>
+                        <host>localhost</host>
                         <port>28080</port>
                     </httpConnector>
                     <jettyXml>
-                        ${basedir}/etc/jetty/jetty.xml,${basedir}/etc/jetty/jetty-ssl.xml,${basedir}/etc/jetty/jetty-https.xml
+                        ${basedir}/etc/jetty/jetty.xml
                     </jettyXml>
                     <systemProperties>
                         <systemProperty>
@@ -66,7 +67,7 @@
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webAppConfig>
-                    <jvmArgs>-Dlog4j.configurationFile=/etc/cas/log4j2.xml -Xdebug
+                    <jvmArgs>-Xdebug
                         -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n
                     </jvmArgs>
                 </configuration>
