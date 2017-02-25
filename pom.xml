@@ -47,6 +47,9 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${maven-jetty-plugin.version}</version>
                 <configuration>
+                    <httpConnector>
+                        <port>28080</port>
+                    </httpConnector>
                     <jettyXml>
                         ${basedir}/etc/jetty/jetty.xml,${basedir}/etc/jetty/jetty-ssl.xml,${basedir}/etc/jetty/jetty-https.xml
                     </jettyXml>
