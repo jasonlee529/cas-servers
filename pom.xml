@@ -67,8 +67,7 @@
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webAppConfig>
-                    <jvmArgs>-Xdebug
-                        -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n
+                    <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n
                     </jvmArgs>
                 </configuration>
             </plugin>
