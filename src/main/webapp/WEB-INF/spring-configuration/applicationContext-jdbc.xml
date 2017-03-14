@@ -56,4 +56,6 @@
     <alias name="queryDatabaseAuthenticationHandler" alias="primaryAuthenticationHandler"/>
     <alias name="dataSource" alias="queryDatabaseDataSource"/>
     <alias name="plainTextPasswordEncoder" alias="passwordEncoder"/>
+
+
 </beans>
