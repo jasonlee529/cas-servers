@@ -3,4 +3,4 @@ CREATE TABLE `my_user` (
   login_name VARCHAR(255) NULL,
   password   VARCHAR(255) NULL,
   PRIMARY KEY (id)
-)
+);

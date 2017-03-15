@@ -30,30 +30,12 @@
        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
-        <!-- Connection Info -->
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.user}"/>
-        <property name="password" value="${jdbc.password}"/>
-
-        <!-- Connection Pooling Info -->
-        <property name="maxActive" value="10"/>
-        <property name="maxIdle" value="30"/>
-        <property name="minIdle" value="0"/>
-        <property name="defaultAutoCommit" value="false"/>
-        <property name="validationQuery" value="select 1"/>
-        <property name="testOnBorrow" value="true"/>
-        <!-- 连接Idle一个小时后超时 -->
-        <property name="timeBetweenEvictionRunsMillis" value="3600000"/>
-        <property name="minEvictableIdleTimeMillis" value="3600000"/>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:test;MODE=MySql;DB_CLOSE_DELAY=-1"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
     </bean>
-    <bean class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="sql"
-                  value=" select password from my_user where login_name = ? "/>
-    </bean>
-
 
     <alias name="queryDatabaseAuthenticationHandler" alias="primaryAuthenticationHandler"/>
     <alias name="dataSource" alias="queryDatabaseDataSource"/>
