@@ -75,19 +75,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
-                <configuration>
-                    <warName>cas</warName>
-                    <overlays>
-                        <overlay>
-                            <groupId>org.jasig.cas</groupId>
-                            <artifactId>cas-server-webapp</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/cas.properties</exclude>
-                                <exclude>WEB-INF/classes/log4j2.xml</exclude>
-                            </excludes>
-                        </overlay>
-                    </overlays>
-                </configuration>
+
             </plugin>
         </plugins>
     </build>
