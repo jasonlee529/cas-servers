@@ -52,19 +52,12 @@
                         <host>localhost</host>
                         <port>28080</port>
                     </httpConnector>
-                    <jettyXml>
-                        ${basedir}/etc/jetty/jetty.xml
-                    </jettyXml>
                     <systemProperties>
                         <systemProperty>
                             <name>org.eclipse.jetty.annotations.maxWait</name>
                             <value>240</value>
                         </systemProperty>
                     </systemProperties>
-                    <webApp>
-                        <contextPath>/cas</contextPath>
-                        <overrideDescriptor>${basedir}/etc/jetty/web.xml</overrideDescriptor>
-                    </webApp>
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webAppConfig>
