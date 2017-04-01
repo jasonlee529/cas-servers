@@ -11,6 +11,7 @@
 
     <properties>
         <shiro.version>1.3.2</shiro.version>
+        <pac4jVersion>1.9.6</pac4jVersion>
     </properties>
 
 
@@ -26,32 +27,16 @@
             <artifactId>spring-web</artifactId>
             <version>4.2.8.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-web</artifactId>
             <version>${shiro.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-cas -->
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-cas</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jasig.cas.client</groupId>
-            <artifactId>cas-client-core</artifactId>
-            <version>3.2.1</version>
+            <groupId>org.pac4j</groupId>
+            <artifactId>pac4j-cas</artifactId>
+            <version>${pac4jVersion}</version>
         </dependency>
 
     </dependencies>
